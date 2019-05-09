@@ -1,0 +1,51 @@
+{
+  "name": "fullstack-task-manager",
+  "description": "A fullstack task manager build with Next.js, Express, Mongoose, Styled Components and using React Hooks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TituxMetal/fullstack-task-manager"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Desktop | Lang Guillaume <lang.guillaume@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "next build",
+    "docker:mongo": "docker run -d --rm --name mongoDev -p 27017:27017 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro -v ~/mongoData/data:/data/db mongo:4.0.5",
+    "docker:mongoClean": "docker rm -f mongoDev",
+    "test": "env-cmd -f ./test.env jest --runInBand",
+    "test-coverage": "env-cmd -f ./test.env jest --coverage tests/*test.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "server/**/*.js",
+      "!**/node_modules/**",
+      "!**/tests/report/**",
+      "!**/.next/**/*"
+    ],
+    "coverageDirectory": "./tests/report",
+    "coverageReporters": [
+      "html"
+    ]
+  },
+  "dependencies": {
+    "@hapi/joi": "^15.0.1",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.6",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "env-cmd": "^9.0.1",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.0",
+    "supertest": "^4.0.2"
+  }
+}
