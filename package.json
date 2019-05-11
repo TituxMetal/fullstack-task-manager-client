@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
+    "dev": "env-cmd -f ./dev.env nodemon index.js",
     "build": "next build",
     "docker:mongo": "docker run -d --rm --name mongoDev -p 27017:27017 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro -v ~/mongoData/data:/data/db mongo:4.0.5",
     "docker:mongoClean": "docker rm -f mongoDev",
