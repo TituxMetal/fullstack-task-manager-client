@@ -1,20 +1,23 @@
 const next = require('next')
 
-const server = require('./server/app')
-
-const dev = process.env.NODE_ENV !== 'production'
+const { port, isProd } = require('./server/config')
+const dev = !isProd
 const app = next({ dev })
 const handle = app.getRequestHandler()
+
+require('./server/database')()
+
+const server = require('./server/app')
 
 app.prepare().then(() => {
   server.get('/_next/*', (req, res) => handle(req, res))
   server.get('/static/*', (req, res) => handle(req, res))
   server.get('*', (req, res) => handle(req, res))
 
-  server.listen(3000, err => {
+  server.listen(port, err => {
     if (err) {
       throw err
     }
-    console.log(`Running on http://localhost:3000`)
+    console.log(`Running on port ${port}`)
   })
 })
