@@ -1,3 +1,5 @@
 export { default as Content } from './Content'
+export { default as Footer } from './Footer'
 export { default as Main } from './Main'
+export { default as Title } from './Title'
 export { GlobalStyle, theme } from './global'
