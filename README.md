@@ -14,7 +14,7 @@ Built with React using React Hooks and React Context, styled with Styled Compone
 
 | Task                            | Current Status | Done                      |
 | ------------------------------- | -------------- | ------------------------- |
-| Display a list of tasks         | To Do          | <ul><li> - [ ] </li></ul> |
+| Display a list of tasks         | Done           | <ul><li> - [x] </li></ul> |
 | Add a task                      | To Do          | <ul><li> - [ ] </li></ul> |
 | Toggle complete/uncomplete task | To Do          | <ul><li> - [ ] </li></ul> |
 | Show number of tasks            | To Do          | <ul><li> - [ ] </li></ul> |
