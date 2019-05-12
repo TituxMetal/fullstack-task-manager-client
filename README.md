@@ -25,7 +25,7 @@ Built with React using React Hooks and React Context, styled with Styled Compone
 
 | [x] | Route                 | Arguments   | Payload                                                                    | Return              |
 | --- | --------------------- | ----------- | -------------------------------------------------------------------------- | ------------------- |
-| [ ] | GET /api/tasks        |             |                                                                            | [ { Task } ] OR [ ] |
+| [x] | GET /api/tasks        |             |                                                                            | [ { Task } ] OR [ ] |
 | [ ] | POST /api/tasks       |             | { description (string, minLength = 4), completed (boolean) default false } | { Task }            |
 | [ ] | PATCH /api/tasks/:id  | :id task Id | { description (string, minLength = 4), completed (boolean) }               | { Task }            |
 | [ ] | DELETE /api/tasks/:id | :id task Id |                                                                            | { Task }            |
@@ -36,11 +36,15 @@ Clone this repository with `git clone https://github.com/TituxMetal/fullstack-ta
 
 ## Run the app:
 
+Make sure to setup the port and database uri in a dev.env file or in environment variables
+
+If you have Docker installed just run `yarn docker:mongo` to start a mongodb container named mongoDev.
+
 - in dev mode with `yarn dev` and open http://localhost:3000 in your browser.
 - in production mode with `yarn build && yarn start` and open http://localhost:3000 in your browser
 
 ## Run the app with Docker
 
-Build the Docker image with `docker build -t task-manager .` then run `docker run -d --rm --name task-manager -p 80:3000 task-manager` and open http://localhost in your browser.
+Build the Docker image with `docker build -t task-manager .` then run `docker run -d --rm --name task-manager -p 80:3000 --link mongoDev:mongo task-manager` and open http://localhost in your browser.
 
-Or simply push the image from the docker hub with `docker pull tuximetal/fullstack-task-manager:1.0.0` and run it with `docker run -d --rm --name fullstack-task-manager -p 80:3000 tuximetal/fullstack-task-manager:1.0.0` and open http://localhost in your browser.
+Or simply pull the image from the docker hub with `docker pull tuximetal/task-manager:0.0.2` and run it with `docker run -d --rm --name task-manager -p 80:3000 --link mongoDev:mongo -e MONGO_URI=mongodb://mongo:27017/task-manager tuximetal/task-manager:0.0.2` and open http://localhost in your browser.
