@@ -7,7 +7,6 @@ export const theme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
-  @import '/static/fonts/roboto.css';
   body {
     padding: 0;
     margin: 0;
