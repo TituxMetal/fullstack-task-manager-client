@@ -26,5 +26,6 @@ COPY --from=builder /app/build/package.json ./
 EXPOSE 3000
 
 ENV NODE_ENV production
+ENV MONGO_URI mongodb://mongo:27017/fullstack-task-manager
 
 CMD ["yarn", "start"]
