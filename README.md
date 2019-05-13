@@ -26,7 +26,7 @@ Built with React using React Hooks and React Context, styled with Styled Compone
 | [x] | Route                 | Arguments   | Payload                                                                    | Return              |
 | --- | --------------------- | ----------- | -------------------------------------------------------------------------- | ------------------- |
 | [x] | GET /api/tasks        |             |                                                                            | [ { Task } ] OR [ ] |
-| [ ] | POST /api/tasks       |             | { description (string, minLength = 4), completed (boolean) default false } | { Task }            |
+| [x] | POST /api/tasks       |             | { description (string, minLength = 4), completed (boolean) default false } | { Task }            |
 | [ ] | PATCH /api/tasks/:id  | :id task Id | { description (string, minLength = 4), completed (boolean) }               | { Task }            |
 | [ ] | DELETE /api/tasks/:id | :id task Id |                                                                            | { Task }            |
 
