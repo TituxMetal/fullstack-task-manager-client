@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import styled from 'styled-components'
 
 import { TaskContext } from '../../context'
+import { Icon } from '../tasks'
 
 const Form = styled.form`
   background-color: rgba(0, 0, 0, 0.3);
@@ -40,7 +41,11 @@ export default () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {isValid(text.trim()) ? 'Add Ico' : 'Block Ico'}
+      {isValid(text.trim()) ? (
+        <Icon onClick={handleSubmit} slug='add' color='6baa23' name='Add' />
+      ) : (
+        <Icon slug='block' color='dc143c' name='Invalid' />
+      )}
       <input
         onChange={() => setText(event.target.value)}
         value={text}
