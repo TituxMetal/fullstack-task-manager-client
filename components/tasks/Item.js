@@ -1,5 +1,6 @@
 // import { useContext } from 'react'
 import styled from 'styled-components'
+import { Icon } from '.'
 
 // import { TaskContext } from '../../context'
 
@@ -31,9 +32,14 @@ export default ({ task }) => {
 
   return (
     <Item>
-      {completed ? 'Done' : 'Undone'}
+      {completed ? (
+        <Icon slug='done' color='6baa23' name='Done' />
+      ) : (
+        <Icon slug='radio_button_unchecked' color='fbfaf9' name='Undone' />
+      )}
       <p className={completed ? 'completed' : null}>{description}</p>
-      <span>Edit</span> <span>Delete</span>
+      <Icon slug='edit' color='6495ed' name='Edit' />
+      <Icon slug='delete' color='dc143c' name='Delete' />
     </Item>
   )
 }
