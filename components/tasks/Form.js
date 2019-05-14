@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
 import { TaskContext } from '../../context'
@@ -28,14 +28,20 @@ const Form = styled.form`
 `
 export default () => {
   const [text, setText] = useState('')
-  const { addTask, current, isValid } = useContext(TaskContext)
+  const { addTask, updateTask, current, isValid } = useContext(TaskContext)
+  const inputRef = useRef()
+
+  useEffect(() => {
+    current.description ? setText(current.description) : setText('')
+    inputRef.current.focus()
+  }, [current])
 
   const handleSubmit = event => {
     event.preventDefault()
     const value = text.trim()
 
     if (isValid(value)) {
-      addTask(value)
+      current._id ? updateTask(value) : addTask(value)
     }
   }
 
@@ -49,6 +55,7 @@ export default () => {
       <input
         onChange={() => setText(event.target.value)}
         value={text}
+        ref={inputRef}
         type='text'
         placeholder='Add a task'
       />
