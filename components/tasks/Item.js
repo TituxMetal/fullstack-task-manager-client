@@ -27,7 +27,7 @@ const Item = styled.li`
 `
 
 export default ({ task }) => {
-  const { id, description, completed } = task
+  const { _id, description, completed } = task
 
   return (
     <Item>

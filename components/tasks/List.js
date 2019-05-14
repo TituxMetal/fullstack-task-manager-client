@@ -18,7 +18,7 @@ export default () => {
   return (
     <List>
       {list.map(task => (
-        <Item key={task.id} task={task} />
+        <Item key={task._id} task={task} />
       ))}
     </List>
   )
