@@ -28,7 +28,7 @@ const Item = styled.li`
 `
 
 export default ({ task }) => {
-  const { toggleComplete, removeTask } = useContext(TaskContext)
+  const { toggleComplete, setCurrent, removeTask } = useContext(TaskContext)
   const { _id, description, completed } = task
 
   const handleComplete = id => () => toggleComplete(id)
@@ -48,7 +48,7 @@ export default ({ task }) => {
       <p onClick={handleComplete(_id)} className={completed ? 'completed' : null}>
         {description}
       </p>
-      <Icon slug='edit' color='6495ed' name='Edit' />
+      <Icon onClick={() => setCurrent(task)} slug='edit' color='6495ed' name='Edit' />
       <Icon onClick={() => removeTask(_id)} slug='delete' color='dc143c' name='Delete' />
     </Item>
   )
