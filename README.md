@@ -28,7 +28,7 @@ Built with React using React Hooks and React Context, styled with Styled Compone
 | [x] | GET /api/tasks        |             |                                                                            | [ { Task } ] OR [ ] |
 | [x] | POST /api/tasks       |             | { description (string, minLength = 4), completed (boolean) default false } | { Task }            |
 | [ ] | PATCH /api/tasks/:id  | :id task Id | { description (string, minLength = 4), completed (boolean) }               | { Task }            |
-| [ ] | DELETE /api/tasks/:id | :id task Id |                                                                            | { Task }            |
+| [x] | DELETE /api/tasks/:id | :id task Id |                                                                            | { Task }            |
 
 # Usage
 
