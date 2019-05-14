@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
 
-import { Icon } from '.'
+import { Icon } from '../tasks'
 import { TaskContext } from '../../context'
 
 const Item = styled.li`
@@ -28,17 +28,26 @@ const Item = styled.li`
 `
 
 export default ({ task }) => {
-  const { removeTask } = useContext(TaskContext)
+  const { toggleComplete, removeTask } = useContext(TaskContext)
   const { _id, description, completed } = task
+
+  const handleComplete = id => () => toggleComplete(id)
 
   return (
     <Item>
       {completed ? (
-        <Icon slug='done' color='6baa23' name='Done' />
+        <Icon onClick={handleComplete(_id)} slug='done' color='6baa23' name='Done' />
       ) : (
-        <Icon slug='radio_button_unchecked' color='fbfaf9' name='Undone' />
+        <Icon
+          onClick={handleComplete(_id)}
+          slug='radio_button_unchecked'
+          color='fbfaf9'
+          name='Undone'
+        />
       )}
-      <p className={completed ? 'completed' : null}>{description}</p>
+      <p onClick={handleComplete(_id)} className={completed ? 'completed' : null}>
+        {description}
+      </p>
       <Icon slug='edit' color='6495ed' name='Edit' />
       <Icon onClick={() => removeTask(_id)} slug='delete' color='dc143c' name='Delete' />
     </Item>
