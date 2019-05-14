@@ -15,7 +15,7 @@ Built with React using React Hooks and React Context, styled with Styled Compone
 | Task                            | Current Status | Done                      |
 | ------------------------------- | -------------- | ------------------------- |
 | Display a list of tasks         | Done           | <ul><li> - [x] </li></ul> |
-| Add a task                      | To Do          | <ul><li> - [ ] </li></ul> |
+| Add a task                      | To Do          | <ul><li> - [x] </li></ul> |
 | Toggle complete/uncomplete task | To Do          | <ul><li> - [ ] </li></ul> |
 | Show number of tasks            | To Do          | <ul><li> - [ ] </li></ul> |
 | Edit a task                     | To Do          | <ul><li> - [ ] </li></ul> |
@@ -47,4 +47,4 @@ If you have Docker installed just run `yarn docker:mongo` to start a mongodb con
 
 Build the Docker image with `docker build -t task-manager .` then run `docker run -d --rm --name task-manager -p 80:3000 --link mongoDev:mongo task-manager` and open http://localhost in your browser.
 
-Or simply pull the image from the docker hub with `docker pull tuximetal/task-manager:0.0.2` and run it with `docker run -d --rm --name task-manager -p 80:3000 --link mongoDev:mongo -e MONGO_URI=mongodb://mongo:27017/task-manager tuximetal/task-manager:0.0.2` and open http://localhost in your browser.
+Or simply pull the image from the docker hub with `docker pull tuximetal/task-manager:0.1.0` and run it with `docker run -d --rm --name task-manager -p 80:3000 --link mongoDev:mongo -e MONGO_URI=mongodb://mongo:27017/task-manager tuximetal/task-manager:0.1.0` and open http://localhost in your browser.
