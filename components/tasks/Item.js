@@ -1,8 +1,8 @@
-// import { useContext } from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components'
-import { Icon } from '.'
 
-// import { TaskContext } from '../../context'
+import { Icon } from '.'
+import { TaskContext } from '../../context'
 
 const Item = styled.li`
   background-color: rgba(0, 0, 0, 0.3);
@@ -28,6 +28,7 @@ const Item = styled.li`
 `
 
 export default ({ task }) => {
+  const { removeTask } = useContext(TaskContext)
   const { _id, description, completed } = task
 
   return (
@@ -39,7 +40,7 @@ export default ({ task }) => {
       )}
       <p className={completed ? 'completed' : null}>{description}</p>
       <Icon slug='edit' color='6495ed' name='Edit' />
-      <Icon slug='delete' color='dc143c' name='Delete' />
+      <Icon onClick={() => removeTask(_id)} slug='delete' color='dc143c' name='Delete' />
     </Item>
   )
 }
