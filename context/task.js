@@ -5,6 +5,7 @@ export const TaskContext = createContext()
 
 export const TaskProvider = ({ children }) => {
   const [list, setList] = useState([])
+  const [current, setCurrent] = useState({})
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export const TaskProvider = ({ children }) => {
   const addTask = async text => {
     const res = await createTask({ description: text })
     setList([...list, res.data])
+    setCurrent({})
   }
 
   const toggleComplete = async id => {
@@ -37,13 +39,38 @@ export const TaskProvider = ({ children }) => {
     setList(toggledTask)
   }
 
+  const updateTask = async text => {
+    const { data } = await editTask(current._id, { description: text })
+    const updatedTask = list.map(task =>
+      task._id === current._id
+        ? { ...task, description: data.description, completed: data.completed }
+        : task
+    )
+
+    setList(updatedTask)
+    setCurrent({})
+  }
+
   const removeTask = async id => {
     await deleteTask(id)
     setList(list.filter(task => task._id !== id))
+    setCurrent(current._id === id ? {} : current)
   }
 
   return (
-    <TaskContext.Provider value={{ list, loading, addTask, isValid, toggleComplete, removeTask }}>
+    <TaskContext.Provider
+      value={{
+        list,
+        loading,
+        current,
+        setCurrent,
+        addTask,
+        isValid,
+        toggleComplete,
+        updateTask,
+        removeTask
+      }}
+    >
       {children}
     </TaskContext.Provider>
   )
