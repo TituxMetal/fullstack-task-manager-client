@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext } from 'react'
 
-import { getAllTasks, createTask } from '../lib/query'
+import { getAllTasks, createTask, deleteTask } from '../lib/query'
 export const TaskContext = createContext()
 
 export const TaskProvider = ({ children }) => {
@@ -29,8 +29,13 @@ export const TaskProvider = ({ children }) => {
     setList([...list, res.data])
   }
 
+  const removeTask = async id => {
+    await deleteTask(id)
+    setList(list.filter(task => task._id !== id))
+  }
+
   return (
-    <TaskContext.Provider value={{ list, loading, addTask, isValid }}>
+    <TaskContext.Provider value={{ list, loading, addTask, isValid, removeTask }}>
       {children}
     </TaskContext.Provider>
   )
