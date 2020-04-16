@@ -7,13 +7,13 @@
   },
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Desktop | Lang Guillaume <lang.guillaume@gmail.com>",
+  "author": "Titux Metal <github@lgdweb.fr>",
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
     "dev": "env-cmd -f ./dev.env nodemon index.js",
     "build": "next build",
-    "docker:mongo": "docker run -d --rm --name mongoDev -p 27017:27017 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro -v ~/mongoData/data:/data/db mongo:4.0.5",
+    "docker:mongo": "docker run -d --rm --name mongoDev -p 27017:27017 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro -v ~/mongoData/data:/data/db mongo:4.2.3",
     "docker:mongoClean": "docker rm -f mongoDev",
     "test": "env-cmd -f ./test.env jest --runInBand",
     "test-coverage": "env-cmd -f ./test.env jest --coverage tests/*test.js"
@@ -33,19 +33,19 @@
   },
   "dependencies": {
     "@hapi/joi": "^15.0.1",
-    "axios": "^0.18.1",
-    "express": "^4.16.4",
-    "mongoose": "^5.7.5",
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9",
     "next": "^9.3.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "env-cmd": "^9.0.1",
-    "jest": "^24.8.0",
-    "nodemon": "^1.19.0",
+    "env-cmd": "^10.1.0",
+    "jest": "^25.3.0",
+    "nodemon": "^2.0.3",
     "supertest": "^4.0.2"
   }
 }
