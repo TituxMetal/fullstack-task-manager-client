@@ -1,51 +1,27 @@
 {
-  "name": "fullstack-task-manager",
-  "description": "A fullstack task manager build with Next.js, Express, Mongoose, Styled Components and using React Hooks",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TituxMetal/fullstack-task-manager"
-  },
-  "version": "1.0.0",
-  "main": "index.js",
   "author": "Titux Metal <github@lgdweb.fr>",
+  "description": "The client for the fullstack task manager. Build with Next.js, Styled Components and using React Hooks",
   "license": "MIT",
+  "name": "fullstack-task-manager-client",
+  "version": "1.0.0",
   "scripts": {
-    "start": "node index.js",
-    "dev": "env-cmd -f ./dev.env nodemon index.js",
-    "build": "next build",
-    "docker:mongo": "docker run -d --rm --name mongoDev -p 27017:27017 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro -v ~/mongoData/data:/data/db mongo:4.2.3",
-    "docker:mongoClean": "docker rm -f mongoDev",
-    "test": "env-cmd -f ./test.env jest --runInBand",
-    "test-coverage": "env-cmd -f ./test.env jest --coverage tests/*test.js"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverageFrom": [
-      "server/**/*.js",
-      "!**/node_modules/**",
-      "!**/tests/report/**",
-      "!**/.next/**/*"
-    ],
-    "coverageDirectory": "./tests/report",
-    "coverageReporters": [
-      "html"
-    ]
+    "start": "next start",
+    "dev": "env-cmd next",
+    "build": "next build"
   },
   "dependencies": {
-    "@hapi/joi": "^15.0.1",
     "axios": "^0.19.2",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.9",
-    "next": "^9.3.2",
+    "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
-    "env-cmd": "^10.1.0",
-    "jest": "^25.3.0",
-    "nodemon": "^2.0.3",
-    "supertest": "^4.0.2"
+    "babel-plugin-styled-components": "^1.10.7",
+    "env-cmd": "^10.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TituxMetal/fullstack-task-manager-client"
   }
 }
