@@ -1,4 +1,4 @@
-import { useEffect, useState, createContext } from 'react'
+import { useState, createContext } from 'react'
 
 import { getAllTasks, createTask, editTask, deleteTask } from '../lib/query'
 export const TaskContext = createContext()
@@ -7,10 +7,6 @@ export const TaskProvider = ({ children }) => {
   const [list, setList] = useState([])
   const [current, setCurrent] = useState({})
   const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    fetchData()
-  }, [])
 
   const fetchData = async () => {
     setLoading(true)
@@ -61,6 +57,7 @@ export const TaskProvider = ({ children }) => {
     <TaskContext.Provider
       value={{
         list,
+        fetchData,
         loading,
         current,
         setCurrent,
