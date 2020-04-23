@@ -11,14 +11,20 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "5.1.2",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-eslint": "10.1.0",
     "babel-plugin-styled-components": "^1.10.7",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "eslint-config-standard-airbnb-bundle": "^1.0.6",
+    "parcel-bundler": "1.12.4",
+    "prettier-standard": "16.2.1"
   },
   "repository": {
     "type": "git",
