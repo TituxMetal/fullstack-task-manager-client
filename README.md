@@ -1,7 +1,7 @@
 # Fullstack Task Manager Client
 
-The client for the fullstack task manager.
-Built with Next.js using React Hooks and React Context, styled with Styled Components.
+The client for the fullstack task manager app.
+Build with React, React Router and Styled Components.
 
 # Spec
 
