@@ -1,13 +1,12 @@
 {
   "author": "Titux Metal <github@lgdweb.fr>",
-  "description": "The client for the fullstack task manager. Build with Next.js, Styled Components and using React Hooks",
+  "description": "The client for the fullstack task manager app.",
   "license": "MIT",
   "name": "fullstack-task-manager-client",
   "version": "1.0.0",
   "scripts": {
-    "start": "next start",
-    "dev": "env-cmd next",
-    "build": "next build"
+    "lint": "prettier-standard 'src/**/*.js' --lint",
+    "watch": "env-cmd parcel serve -p 3000 ./src/index.html"
   },
   "dependencies": {
     "axios": "^0.19.2",
