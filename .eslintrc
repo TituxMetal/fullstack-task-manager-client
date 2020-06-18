@@ -1,3 +1,14 @@
 {
-  "extends": "standard-airbnb-bundle"
+  "extends": "standard-airbnb-bundle",
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js"],
+        "map": [[ "~", "./src"]]
+      }
+    }
+  },
+  "rules": {
+    "import/prefer-default-export": 0
+  }
 }
