@@ -1,10 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 
-const Title = styled.h1`
-  color: ${({ theme }) => theme.textColor};
-`
+import { About, Home } from '~/components/pages'
+import { Main } from '~/components/Main'
 
-const Root = () => <Title>Root component</Title>
+const Root = () => (
+  <Router>
+    <Main>
+      <Switch>
+        <Route path='/' component={Home} exact />
+        <Route path='/about' component={About} />
+        <Redirect to='/' />
+      </Switch>
+    </Main>
+  </Router>
+)
 
 export default Root
