@@ -1,14 +1,39 @@
 {
-  "extends": "standard-airbnb-bundle",
+  "extends": [
+    "kentcdodds/jsx-a11y",
+    "kentcdodds/react",
+    "kentcdodds",
+    "prettier"
+  ],
   "settings": {
     "import/resolver": {
       "alias": {
         "extensions": [".js"],
-        "map": [[ "~", "./src"]]
+        "map": [["~", "./src"]]
       }
     }
   },
   "rules": {
-    "import/prefer-default-export": 0
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed"],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "groups": [["builtin", "external"], "internal", "parent", "sibling"],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "~/**",
+            "group": "parent"
+          }
+        ]
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "babel/no-invalid-this": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "react/prop-types": 0,
+    "semi": "off"
   }
 }
