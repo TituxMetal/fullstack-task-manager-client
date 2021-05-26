@@ -5,7 +5,7 @@
   "name": "fullstack-task-manager-client",
   "version": "1.0.0",
   "scripts": {
-    "clear": "rm -rf ./.parcel-cache ./cache ./dist",
+    "clear": "rm -rf ./.parcel-cache ./.cache ./dist",
     "build": "parcel build ./src/index.html --public-url ./",
     "prebuild": "yarn clear",
     "watch": "env-cmd -f ./.env.development parcel src/index.html -p 3000"
