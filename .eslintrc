@@ -9,7 +9,7 @@
     "import/resolver": {
       "alias": {
         "extensions": [".js"],
-        "map": [["~", "./src"]]
+        "map": [["#root", "./src"]]
       }
     }
   },
@@ -24,7 +24,7 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "~/**",
+            "pattern": "#root/**",
             "group": "parent"
           }
         ]

@@ -1,6 +1,14 @@
 import React from 'react'
 
-import { Brand, BrandLink, Li, LinkItem, Nav, NavItems, NavContainer } from '~/components/Main'
+import {
+  Brand,
+  BrandLink,
+  Li,
+  LinkItem,
+  Nav,
+  NavItems,
+  NavContainer
+} from '#root/components/Main'
 
 const Menu = () => (
   <NavContainer>
@@ -15,9 +23,7 @@ const Menu = () => (
           </LinkItem>
         </Li>
         <Li>
-          <LinkItem to='/about'>
-            About
-          </LinkItem>
+          <LinkItem to='/about'>About</LinkItem>
         </Li>
       </NavItems>
     </Nav>

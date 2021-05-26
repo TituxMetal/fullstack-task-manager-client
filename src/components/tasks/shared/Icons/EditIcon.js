@@ -1,7 +1,8 @@
-import React from 'react'
 import { Edit } from '@styled-icons/material'
+import React from 'react'
 
-import { cornflowerBlue } from '~/theme/colors'
+import { cornflowerBlue } from '#root/theme/colors'
+
 import { Icon } from './Icon'
 
 export const EditIcon = () => (
