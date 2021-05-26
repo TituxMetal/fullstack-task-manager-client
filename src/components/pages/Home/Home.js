@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Container, Title } from '~/components/shared'
-import { Form, TasksList } from '~/components/tasks'
+import { Container, Title } from '#root/components/shared'
+import { Form, TasksList } from '#root/components/tasks'
 
 const Home = () => (
   <Container>

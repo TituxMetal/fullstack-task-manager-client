@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AddIcon, Box, Input } from '~/components/tasks'
+import { AddIcon, Box, Input } from '#root/components/tasks'
 
 const Form = () => (
   <Box as='form'>

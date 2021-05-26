@@ -1,8 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch
+} from 'react-router-dom'
 
-import { About, Home } from '~/components/pages'
-import { Main } from '~/components/Main'
+import { Main } from '#root/components/Main'
+import { About, Home } from '#root/components/pages'
 
 const Root = () => (
   <Router>

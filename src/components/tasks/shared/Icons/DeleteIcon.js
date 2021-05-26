@@ -1,7 +1,8 @@
-import React from 'react'
 import { Delete } from '@styled-icons/material'
+import React from 'react'
 
-import { crimson } from '~/theme/colors'
+import { crimson } from '#root/theme/colors'
+
 import { Icon } from './Icon'
 
 const DeleteIcon = () => (
