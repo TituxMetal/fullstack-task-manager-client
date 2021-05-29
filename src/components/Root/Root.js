@@ -6,18 +6,18 @@ import {
   Switch
 } from 'react-router-dom'
 
-import { Main } from '#root/components/Main'
+import { Layout } from '#root/components/Layout'
 import { About, Home } from '#root/components/pages'
 
 const Root = () => (
   <Router>
-    <Main>
+    <Layout>
       <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/about' component={About} />
         <Redirect to='/' />
       </Switch>
-    </Main>
+    </Layout>
   </Router>
 )
 
