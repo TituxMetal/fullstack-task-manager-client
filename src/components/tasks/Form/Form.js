@@ -1,10 +1,13 @@
 import React from 'react'
 
-import { AddIcon, Box, Input } from '#root/components/tasks'
+import { Add } from '#root/components/Icons'
+import { Box } from '#root/components/tasks'
+
+import { Input } from './styled'
 
 const Form = () => (
   <Box as='form'>
-    <AddIcon />
+    <Add />
     <Input placeholder='Add a task' />
   </Box>
 )

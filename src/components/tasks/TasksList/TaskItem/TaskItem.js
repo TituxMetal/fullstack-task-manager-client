@@ -1,30 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import {
-  DeleteIcon,
-  DoneIcon,
-  EditIcon,
-  UndoneIcon
-} from '#root/components/tasks/shared'
-import { Box } from '#root/components/tasks/styled'
+import { Delete, Done, Edit, Undone } from '#root/components/Icons'
+import { Box } from '#root/components/tasks'
 
-const Task = styled.p`
-  color: ${({ completed, theme }) =>
-    completed ? theme.darkGoldenrod : theme.paleGoldenrod};
-  cursor: pointer;
-  flex-grow: 1;
-  text-align: center;
-  text-decoration: ${({ completed }) => completed && 'line-through'};
-`
+import { Task } from './styled'
 
-const TaskItem = () => (
+const TaskItem = ({ description, done, id }) => (
   <Box>
-    <UndoneIcon />
-    <DoneIcon />
-    <Task>Task One</Task>
-    <EditIcon />
-    <DeleteIcon />
+    {done ? <Done /> : <Undone />}
+    <Task completed={done}>{description}</Task>
+    <Edit id={id} />
+    <Delete id={id} />
   </Box>
 )
 
