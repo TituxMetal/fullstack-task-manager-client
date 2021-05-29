@@ -1,0 +1,33 @@
+import React from 'react'
+
+import {
+  Brand,
+  BrandLink,
+  Li,
+  LinkItem,
+  Nav,
+  NavContainer,
+  NavItems
+} from './styled'
+
+const NavBar = () => (
+  <NavContainer>
+    <Nav>
+      <Brand>
+        <BrandLink to='/'>Task Manager</BrandLink>
+      </Brand>
+      <NavItems>
+        <Li>
+          <LinkItem to='/' exact>
+            Home
+          </LinkItem>
+        </Li>
+        <Li>
+          <LinkItem to='/about'>About</LinkItem>
+        </Li>
+      </NavItems>
+    </Nav>
+  </NavContainer>
+)
+
+export default NavBar
