@@ -1,0 +1,7 @@
+export { default as Add } from './AddIcon'
+export { default as Block } from './BlockIcon'
+export { default as Delete } from './DeleteIcon'
+export { default as Done } from './DoneIcon'
+export { default as Edit } from './EditIcon'
+export { default as Undone } from './UndoneIcon'
+export * from './Icon'

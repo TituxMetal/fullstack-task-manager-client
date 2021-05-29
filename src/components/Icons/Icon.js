@@ -8,5 +8,5 @@ export const Icon = styled.button`
   padding: 0.3rem;
   height: 2rem;
   width: 2rem;
-  color: ${({ color }) => color};
+  color: ${({ theme, color }) => theme[color]};
 `

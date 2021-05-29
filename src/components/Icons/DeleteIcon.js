@@ -1,12 +1,10 @@
 import { Delete } from '@styled-icons/material'
 import React from 'react'
 
-import { crimson } from '#root/theme/colors'
-
 import { Icon } from './Icon'
 
 const DeleteIcon = () => (
-  <Icon color={crimson}>
+  <Icon color='crimson'>
     <Delete />
   </Icon>
 )
