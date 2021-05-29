@@ -6,11 +6,11 @@ import {
   Li,
   LinkItem,
   Nav,
-  NavItems,
-  NavContainer
-} from '#root/components/Main'
+  NavContainer,
+  NavItems
+} from './styled'
 
-const Menu = () => (
+const NavBar = () => (
   <NavContainer>
     <Nav>
       <Brand>
@@ -30,4 +30,4 @@ const Menu = () => (
   </NavContainer>
 )
 
-export default Menu
+export default NavBar

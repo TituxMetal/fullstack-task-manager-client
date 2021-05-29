@@ -1,6 +1,9 @@
+import React from 'react'
 import styled from 'styled-components'
 
-const Footer = styled.footer`
+const Text = styled.p``
+
+const Wrapper = styled.footer`
   align-items: center;
   background-color: ${({ theme }) => theme.blackAlpha3};
   color: ${({ theme }) => theme.textColor};
@@ -9,5 +12,11 @@ const Footer = styled.footer`
   justify-content: center;
   max-width: 100vw;
 `
+
+const Footer = () => (
+  <Wrapper>
+    <Text>Created with love by TituxMetal</Text>
+  </Wrapper>
+)
 
 export default Footer
