@@ -1,24 +1,23 @@
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch
-} from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 import { Layout } from '#root/components/Layout'
-import { About, Home } from '#root/components/pages'
+
+const Home = lazy(() => import('../pages/Home'))
+const About = lazy(() => import('../pages/About'))
 
 const Root = () => (
-  <Router>
-    <Layout>
-      <Switch>
-        <Route path='/' component={Home} exact />
-        <Route path='/about' component={About} />
-        <Redirect to='/' />
-      </Switch>
-    </Layout>
-  </Router>
+  <BrowserRouter>
+    <Switch>
+      <Suspense fallback={<p>Loading Page...</p>}>
+        <Layout>
+          <Route path='/' component={Home} exact />
+          <Route path='/about' component={About} />
+          <Redirect to='/' />
+        </Layout>
+      </Suspense>
+    </Switch>
+  </BrowserRouter>
 )
 
 export default Root
