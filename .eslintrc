@@ -1,15 +1,10 @@
 {
-  "extends": [
-    "kentcdodds/jsx-a11y",
-    "kentcdodds/react",
-    "kentcdodds",
-    "prettier"
-  ],
+  "extends": ["kentcdodds/jsx-a11y", "kentcdodds/react", "kentcdodds", "prettier"],
   "settings": {
     "import/resolver": {
       "alias": {
         "extensions": [".js"],
-        "map": [["#root", "./src"]]
+        "map": [["~", "./src"]]
       }
     }
   },
@@ -19,19 +14,22 @@
     "import/order": [
       "error",
       {
-        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
         "groups": [["builtin", "external"], "internal", "parent", "sibling"],
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "#root/**",
+            "pattern": "~/**",
             "group": "parent"
           }
         ]
       }
     ],
     "jsx-quotes": ["error", "prefer-single"],
-    "babel/no-invalid-this": 0,
+    "@babel/no-invalid-this": 0,
     "react-hooks/exhaustive-deps": 0,
     "react/prop-types": 0,
     "semi": "off"
