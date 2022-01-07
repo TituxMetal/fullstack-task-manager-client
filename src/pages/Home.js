@@ -1,5 +1,13 @@
 import React from 'react'
 
-const HomePage = () => <div>Home Page</div>
+import { TaskForm, TaskList } from '~/components'
+import { CurrentTaskProvider } from '~/hooks'
+
+const HomePage = () => (
+  <CurrentTaskProvider>
+    <TaskForm />
+    <TaskList />
+  </CurrentTaskProvider>
+)
 
 export default HomePage
