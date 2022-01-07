@@ -10,8 +10,10 @@ module.exports = {
         primary: colors.yellow[600],
         secondary: colors.amber[200],
         amber: colors.amber,
-        yellow: colors.yellow,
+        emerald: colors.emerald,
         gray: colors.neutral,
+        sky: colors.sky,
+        yellow: colors.yellow,
         white: colors.neutral[50]
       }
     }
