@@ -1,11 +1,42 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { createContext, useContext, useReducer, useMemo } from 'react'
 
-const CurrentTask = createContext({})
+const CurrentTaskContext = createContext({})
 
-export const CurrentTaskProvider = ({ children }) => {
-  const [current, setCurrent] = useState(null)
+const currentReducer = (state, { type, payload }) => {
+  switch (type) {
+    case 'set': {
+      return { ...state, ...payload }
+    }
 
-  return <CurrentTask.Provider value={{ current, setCurrent }}>{children}</CurrentTask.Provider>
+    case 'reset': {
+      return null
+    }
+
+    default:
+      throw new Error(`Unknown action type: ${type}`)
+  }
 }
 
-export const useCurrentTask = () => useContext(CurrentTask)
+export const useCurrentTask = () => {
+  const context = useContext(CurrentTaskContext)
+
+  if (context === undefined) {
+    throw new Error('useCurrentTask was used outside of its Provider')
+  }
+
+  return context
+}
+
+export const CurrentTaskProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(currentReducer, null)
+
+  const setCurrent = current => dispatch({ type: 'set', payload: current })
+  const resetCurrent = () => dispatch({ type: 'reset' })
+
+  const contextValue = useMemo(
+    () => ({ currentTask: state, setCurrent, resetCurrent }),
+    [state, setCurrent, resetCurrent]
+  )
+
+  return <CurrentTaskContext.Provider value={contextValue}>{children}</CurrentTaskContext.Provider>
+}
