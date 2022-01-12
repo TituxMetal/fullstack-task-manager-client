@@ -1,34 +1,21 @@
 import React from 'react'
 
 import { DataList, List, TaskItem } from '~/components'
+import { useTasksQuery } from '~/hooks'
 
-const tasks = [
-  {
-    id: 1,
-    description: 'Task 1',
-    completed: true
-  },
-  {
-    id: 2,
-    description: 'Task 2',
-    completed: false
-  },
-  {
-    id: 3,
-    description: 'Task 3',
-    completed: false
-  },
-  {
-    id: 4,
-    description: 'Task 4',
-    completed: true
-  }
-]
+const TaskList = () => {
+  const { data = null, error } = useTasksQuery()
 
-const TaskList = () => (
-  <List as='ul' $bordered>
-    <DataList itemComponent={TaskItem} dataList={tasks} />
-  </List>
-)
+  return (
+    <List as='ul' $bordered>
+      {data?.length ? (
+        <DataList itemComponent={TaskItem} dataList={data} />
+      ) : (
+        <p>No tasks yet, please add any</p>
+      )}
+      {error && <p>There is an error...</p>}
+    </List>
+  )
+}
 
 export default TaskList
