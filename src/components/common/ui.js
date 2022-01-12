@@ -5,7 +5,7 @@ export const Container = styled.section(({ $bordered }) => [
   $bordered && tw`border-2 border-dashed border-secondary`
 ])
 
-export const ItemContainer = tw.li`flex justify-between py-4 my-4 cursor-pointer font-bold`
+export const ItemContainer = tw.li`flex justify-between w-full py-1 my-1 cursor-pointer font-bold`
 
 export const ItemContent = styled.p(({ $isDone }) => [
   tw`w-10/12 text-center text-secondary`,
