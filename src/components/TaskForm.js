@@ -4,21 +4,20 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 import { Button, Container, Form } from '~/components'
-import { useCurrentTask } from '~/hooks'
+import { useCurrentTask, useSaveTask } from '~/hooks'
 
 const formSchema = yup.object().shape({
   description: yup.string().min(4).trim().required().label('Description'),
-  completed: yup.boolean(),
-  id: yup.string()
+  completed: yup.boolean()
 })
 const defaultValues = {
   description: '',
-  completed: false,
-  id: ''
+  completed: false
 }
 
 const TaskForm = () => {
-  const { current, setCurrent } = useCurrentTask()
+  const { currentTask, resetCurrent } = useCurrentTask()
+  const saveTaskMutation = useSaveTask()
   const {
     handleSubmit,
     register,
@@ -33,22 +32,16 @@ const TaskForm = () => {
 
   useEffect(() => {
     setFocus('description')
-  }, [current])
+    reset(currentTask || defaultValues)
+  }, [currentTask, isSubmitSuccessful])
 
-  useEffect(() => {
-    reset(current || defaultValues)
-  }, [current, isSubmitSuccessful])
-
-  const onSubmitHandler = data => {
-    console.log(current ? `Edit query${data.id}` : 'Add query', data)
-    setCurrent(null)
-  }
+  const onSubmitHandler = data => saveTaskMutation.mutate(data, { onSettled: () => resetCurrent() })
 
   return (
     <Container $bordered>
       <Form onSubmit={handleSubmit(onSubmitHandler)}>
         {isValid ? <Button.Add type='submit' /> : <Button.Block disabled={!isValid} />}
-        {current && <Button.Block type='button' onClick={() => setCurrent(null)} />}
+        {currentTask && <Button.Block type='button' onClick={resetCurrent} />}
         <Form.Input
           $error={isDirty && errors?.description}
           name='description'
