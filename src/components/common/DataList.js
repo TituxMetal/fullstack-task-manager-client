@@ -1,6 +1,6 @@
 import React from 'react'
 
 const DataList = ({ itemComponent: ItemComponent, dataList }) =>
-  dataList.map((data, index) => <ItemComponent key={data?.id || index} {...data} />)
+  dataList.map(({ id }, index) => <ItemComponent key={id || index} dataId={id} />)
 
 export default DataList
