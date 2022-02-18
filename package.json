@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@fontsource/roboto": "4.5.3",
-    "@hookform/resolvers": "2.8.5",
+    "@hookform/resolvers": "2.8.8",
     "@styled-icons/material": "10.34.0",
     "axios": "0.24.0",
     "react": "17.0.2",
