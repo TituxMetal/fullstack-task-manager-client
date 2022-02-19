@@ -25,8 +25,8 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
-    "@babel/core": "7.16.5",
-    "@babel/plugin-transform-react-jsx": "7.16.5",
+    "@babel/core": "7.17.5",
+    "@babel/plugin-transform-react-jsx": "7.17.3",
     "autoprefixer": "10.4.2",
     "env-cmd": "10.1.0",
     "eslint": "8.5.0",
