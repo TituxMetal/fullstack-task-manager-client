@@ -12,7 +12,7 @@
     "watch": "env-cmd -f ./.env parcel src/index.html -p 3000"
   },
   "dependencies": {
-    "@fontsource/roboto": "4.5.3",
+    "@fontsource/roboto": "4.5.5",
     "@hookform/resolvers": "2.8.8",
     "@styled-icons/material": "10.34.0",
     "axios": "0.26.1",
