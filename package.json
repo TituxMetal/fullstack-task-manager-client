@@ -21,7 +21,7 @@
     "react-hook-form": "7.28.1",
     "react-query": "3.34.16",
     "react-router-dom": "6.2.2",
-    "styled-components": "5.3.3",
+    "styled-components": "5.3.5",
     "yup": "0.32.11"
   },
   "devDependencies": {
