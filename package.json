@@ -25,7 +25,7 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
-    "@babel/core": "7.17.8",
+    "@babel/core": "7.17.9",
     "@babel/plugin-transform-react-jsx": "7.17.3",
     "autoprefixer": "10.4.4",
     "env-cmd": "10.1.0",
