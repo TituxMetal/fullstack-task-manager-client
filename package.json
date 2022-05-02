@@ -27,7 +27,7 @@
   "devDependencies": {
     "@babel/core": "7.17.10",
     "@babel/plugin-transform-react-jsx": "7.17.3",
-    "autoprefixer": "10.4.6",
+    "autoprefixer": "10.4.7",
     "env-cmd": "10.1.0",
     "eslint": "8.14.0",
     "eslint-config-kentcdodds": "19.2.0",
