@@ -15,7 +15,7 @@
     "@fontsource/roboto": "4.5.8",
     "@hookform/resolvers": "2.9.8",
     "@styled-icons/material": "10.46.0",
-    "axios": "1.0.0",
+    "axios": "1.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.36.1",
